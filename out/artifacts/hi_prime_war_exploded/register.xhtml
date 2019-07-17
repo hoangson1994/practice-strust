@@ -1,0 +1,35 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+
+<h:head>
+</h:head>
+
+<h:body>
+    <h1>Register form</h1>
+    <h:form>
+        <h:panelGrid columns="2" cellpadding="5">
+            <h:outputText value="Please enter your username: "/>
+            <p:inputText value="#{registerView.user.username}"/>
+        </h:panelGrid>
+        <h:panelGrid columns="2" cellpadding="5">
+            <h:outputText value="Please enter your password: "/>
+            <p:inputText value="#{registerView.user.password}"/>
+        </h:panelGrid>
+        <h:panelGrid columns="2" cellpadding="5">
+            <h:outputText value="Please enter your name: "/>
+            <p:inputText value="#{registerView.user.name}"/>
+        </h:panelGrid>
+        <h:panelGrid columns="2" cellpadding="5">
+            <h:outputText value="Please enter your position: "/>
+            <h:selectOneMenu value = "#{registerView.user.position}">
+                <f:selectItem itemValue = "1" itemLabel = "Employees" />
+                <f:selectItem itemValue = "2" itemLabel = "Manager" />
+            </h:selectOneMenu>
+        </h:panelGrid>
+        <p:commandButton value="Submit" action="#{registerView.doSubmit}">
+        </p:commandButton>
+    </h:form>
+</h:body>
+</html>
